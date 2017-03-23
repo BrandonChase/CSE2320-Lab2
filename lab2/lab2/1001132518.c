@@ -7,6 +7,8 @@
 	cardinalities of the subset such that the elements add up to the target sum.
 
 	Compile Command: gcc 1001132518.c -o 1001132518.out
+
+	***Based on code written by Bob Weems ( http://ranger.uta.edu/~weems/NOTES2320/subsetSum.c ) 
 */
 
 #include <stdlib.h>
