@@ -150,12 +150,12 @@ void printCostTable(int inputs_size, int target_size, int** cost_table)
 {
 	printf("   i   card  C\n");
 	printf("-----------------\n");
-	int i, card;
+	int i, cardinality;
 	for (i = 0; i <= target_size; i++)
 	{
-		for (card = 0; card < inputs_size; card++)
+		for (cardinality = 0; cardinality < inputs_size; cardinality++)
 		{
-			printf("%4d %4d %4d\n", i, card + 1, cost_table[i][card]);
+			printf("%4d %4d %4d\n", i, cardinality + 1, cost_table[i][cardinality]);
 		}
 	}
 }
@@ -181,12 +181,12 @@ void printBacktrace(int inputs_size, int target_sum, int* inputs, int** cost_tab
 			printf("Solution with %2d elements\n", cardinality + 1);
 			printf("  i   S\n");
 			printf("-------\n");
-			int i = target_sum, temp_card = cardinality;
-			while (i > 0 && temp_card >= 0)
+			int i = target_sum, temp_cardinality = cardinality;
+			while (i > 0 && temp_cardinality >= 0)
 			{
-				printf("%3d %3d\n", cost_table[i][temp_card], inputs[cost_table[i][temp_card]]);
-				i -= inputs[cost_table[i][temp_card]];
-				temp_card--;
+				printf("%3d %3d\n", cost_table[i][temp_cardinality], inputs[cost_table[i][temp_cardinality]]);
+				i -= inputs[cost_table[i][temp_cardinality]];
+				temp_cardinality--;
 			}
 		}
 	}
